@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditionals & Loops - Matching Game</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script defer src="/js/drag-drop-loops.js"></script>
+
+  <style>
+    .game-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .draggable {
+      background: #e8f0fe;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: grab;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .draggable.dragging {
+      opacity: 0.5;
+      border-color: #667eea;
+    }
+
+    .dropzone {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fafb;
+      transition: background 0.3s ease;
+    }
+
+    .dropzone.hovered {
+      background: #f0f8ff;
+      border-color: #667eea;
+    }
+
+    .correct {
+      background: #c6f6d5 !important;
+      border-color: #38a169 !important;
+    }
+
+    .wrong {
+      background: #fed7d7 !important;
+      border-color: #e53e3e !important;
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    #reset-btn {
+      margin-top: 1rem;
+      background: #667eea;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #reset-btn:hover {
+      background: #5568d3;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <h1>Lucienne Micallef</h1>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#curriculum">Curriculum</a></li>
+        <li><a href="/#interactive">Interactive</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Conditionals & Loops - Matching Game</h2>
+    <p>Drag each Python code snippet to the correct explanation below.</p>
+
+    <div class="game-container">
+      <div class="game-grid">
+        <div>
+          <h3>Code Snippets</h3>
+          <div class="draggable" draggable="true" data-match="1">if x > 10: print("Large")</div>
+          <div class="draggable" draggable="true" data-match="2">for i in range(3): print(i)</div>
+          <div class="draggable" draggable="true" data-match="3">while n > 0: n -= 1</div>
+          <div class="draggable" draggable="true" data-match="4">if x % 2 == 0: print("Even")</div>
+        </div>
+
+        <div>
+          <h3>Explanations</h3>
+          <div class="dropzone" data-accept="1">Checks if x is greater than 10</div>
+          <div class="dropzone" data-accept="2">Repeats code a fixed number of times</div>
+          <div class="dropzone" data-accept="3">Repeats while a condition is true</div>
+          <div class="dropzone" data-accept="4">Checks if a number is divisible by 2</div>
+        </div>
+      </div>
+
+      <div id="result"></div>
+      <button id="reset-btn">Reset Game</button>
+    </div>
+  </div>
+</body>
+</html>
