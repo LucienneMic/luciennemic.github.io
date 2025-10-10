@@ -1,0 +1,46 @@
+/* Drag & Drop Activity Styles */
+.drag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.draggable-item, .drop-zone {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  user-select: none;
+}
+
+.draggable-item {
+  background: #667eea;
+  color: white;
+  cursor: grab;
+}
+
+.draggable-item.dragging {
+  opacity: 0.6;
+}
+
+.drop-zone {
+  background: #f7fafc;
+  border: 2px dashed #667eea;
+  min-width: 200px;
+  min-height: 80px;
+  flex: 1;
+}
+
+.drop-zone.over {
+  background: #e8f0fe;
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #c6f6d5;
+  color: #22543d;
+  display: none;
+}
