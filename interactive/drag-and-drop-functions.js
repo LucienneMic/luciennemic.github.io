@@ -1,12 +1,15 @@
-// Drag & Drop Activity Logic
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   const draggables = document.querySelectorAll('.draggable-item');
   const dropZones = document.querySelectorAll('.drop-zone');
   const successMessage = document.getElementById('successMessage');
 
   draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', () => draggable.classList.add('dragging'));
-    draggable.addEventListener('dragend', () => draggable.classList.remove('dragging'));
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging');
+    });
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging');
+    });
   });
 
   dropZones.forEach(zone => {
@@ -14,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       zone.classList.add('over');
     });
-    zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('over');
+    });
     zone.addEventListener('drop', e => {
       e.preventDefault();
       zone.classList.remove('over');
