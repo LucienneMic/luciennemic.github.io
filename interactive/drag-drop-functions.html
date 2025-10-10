@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Functions Drag & Drop - Lucienne Micallef</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="drag-drop-functions.css">
+</head>
+<body>
+
+  <!-- Header Include -->
+  <div data-include="../partials/header.html"></div>
+
+  <div class="hero">
+    <h2>Python Functions Drag & Drop</h2>
+    <p>Match the function definitions with their correct descriptions.</p>
+  </div>
+
+  <div class="container">
+    <section class="section">
+      <h2>Activity: Match Functions</h2>
+
+      <div class="drag-container">
+        <div class="draggable-item" draggable="true" id="func1">def greet(name): print("Hello, " + name)</div>
+        <div class="draggable-item" draggable="true" id="func2">def add(a, b): return a + b</div>
+        <div class="draggable-item" draggable="true" id="func3">def multiply(x, y): return x * y</div>
+
+        <div class="drop-zone" data-accept="func1">Outputs a greeting message with the given name.</div>
+        <div class="drop-zone" data-accept="func2">Returns the sum of two numbers.</div>
+        <div class="drop-zone" data-accept="func3">Returns the product of two numbers.</div>
+      </div>
+
+      <div class="success-message" id="successMessage">🎉 All matches are correct!</div>
+    </section>
+  </div>
+
+  <!-- Footer Include -->
+  <div data-include="../partials/footer.html"></div>
+
+  <script src="../script/include.js"></script>
+  <script src="drag-drop-functions.js"></script>
+</body>
+</html>
