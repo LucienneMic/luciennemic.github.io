@@ -1,194 +1,180 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lucienne Micallef - Education Engineer Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />    
-    <script src="script/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucienne Micallef - Education Engineer Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/include.js" ></script>
+  <script src="js/script.js" ></script>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h1>Lucienne Micallef</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#curriculum">Curriculum</a></li>
-                <li><a href="#interactive">Interactive</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+  <!-- Header include -->
+  <div data-include="partials/header.html"></div>
+ 
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Education Engineer & Curriculum Designer</h2>
+    <p>12+ years of college teaching experience | Creating engaging, effective learning experiences</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-sidebar">
+          <h3>Quick Facts</h3>
+          <ul>
+            <li><strong>Moved to USA:</strong> 2 years ago</li>
+            <li><strong>U.S. Permanent Resident</strong></li>
+            <li><strong>Based in:</strong> Santa Cruz, California</li>
+          </ul>
+          <ul>
+            <li><strong>Work Experience:</strong> 18 years</li>
+            <li><strong>Level of Education:</strong> Masters in Software Engineering, UK</li>
+          </ul>
+          <h3 style="margin-top:2rem;">Core Skills</h3>
+          <div class="skills">
+            <span class="skill">Curriculum Design</span>
+            <span class="skill">Learning Analytics</span>
+            <span class="skill">LMS Management</span>
+            <span class="skill">Assessment Design</span>
+            <span class="skill">Instructional Technology</span>
+            <span class="skill">Software Engineering</span>
+          </div>
         </div>
-    </nav>
 
-    <div class="hero">
-        <h2>Education Engineer & Curriculum Designer</h2>
-        <p>12+ years of college teaching experience | Creating engaging, effective learning experiences</p>
-    </div>
+        <div>
+          <p style="font-size:1.1rem; margin-bottom:1rem;">
+            I am an experienced educator transitioning into Education Engineering and Curriculum Management roles. 
+            With 12 years of college teaching, I've developed a deep understanding of how students learn and 
+            what makes curriculum effective.
+          </p>
+          <p style="margin-bottom:1rem;">
+            My approach combines pedagogical best practices with modern educational technology. I believe in 
+            backward design, measurable learning outcomes, and creating inclusive learning experiences that 
+            work for diverse learners.
+          </p>
+          <p>
+            I am passionate about scaling quality education through well-designed curriculum, leveraging 
+            technology to enhance learning, and using data to continuously improve student outcomes.
+            I am also fascinated by programming languages and excited about how AI will revolutionize the way we teach, learn, and assess understanding.
+          </p>
+          <a class="download-btn" 
+             href="/assets/resume.pdf" 
+             download="Micallef_Lucienne_Resume.pdf" 
+             aria-label="Download resume as PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="vertical-align:middle; margin-right:8px;">
+              <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h6V9h3.67L12 2z"/>
+            </svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-sidebar">
-                    <h3>Quick Facts</h3>
-                     <ul>
-                        <li><strong>Moved to USA</strong> 3 years ago</li>
-                        <li><strong>U.S. Permanent Resident</strong></li>
-                        <li><strong>Based in: </strong> Santa Cruz, California</li>
-                    </ul>
-                    
-                    <ul>
-                        <li><strong>Work Experience:</strong> 12 years</li>
-                        <li><strong>Level of Education: </strong> Masters in Software Engineering, UK</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 2rem;">Core Skills</h3>
-                    <div class="skills">
-                        <span class="skill">Curriculum Design</span>
-                        <span class="skill">Learning Analytics</span>
-                        <span class="skill">LMS Management</span>
-                        <span class="skill">Assessment Design</span>
-                        <span class="skill">Instructional Technology</span>
-                        <span class="skill">Software Engineering</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-                        I am an experienced educator transitioning into Education Engineering and Curriculum Management roles. 
-                        With 12 years of college teaching, I've developed a deep understanding of how students learn and 
-                        what makes curriculum effective.
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        My approach combines pedagogical best practices with modern educational technology. I believe in 
-                        backward design, measurable learning outcomes, and creating inclusive learning experiences that 
-                        work for diverse learners.
-                    </p>
-                    <p>
-                        I am passionate about scaling quality education through well-designed curriculum, leveraging 
-                        technology to enhance learning, and using data to continuously improve student outcomes.
-                        I am also fascinated by programming languages and excited about how AI will revolutionize the way we teach, learn, and assess understanding.
-                    </p>
-                    <a class="download-btn" 
-                       href="assets/resume.pdf" 
-                       download="Micallef_Lucienne_Resume.pdf" 
-                       aria-label="Download resume as PDF">
-                      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="vertical-align:middle; margin-right:8px;">
-                        <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h6V9h3.67L12 2z"/>
-                      </svg>
-                      Download Resume
-                    </a>
-                </div>
-            </div>
-            
-        </section>
+    <!-- Robotics Section -->
+    <section id="curriculum" class="section">
+      <h2>Robotics - International Competitions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>First Global Competition</h3>
+          <p>First Global, the main organisers for this event invited 162 countries to participate in this competition. The aim of First Global is to encourage STEM education through the use of robotics; to motivate students from developed, poor and war-torn countries to participate and meet with other students from across the globe, 
+              and to raise awareness on current environmental issues.</p>
+          <div class="tags">
+            <span class="tag">STEM</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">International</span>
+          </div>
+          <a href="https://timesofmalta.com/article/mcast-students-represent-malta-at-robotics-challenge-in-mexico-city.686738" class="btn">2018 - Mexico City</a>
+          <a href="https://mcast.edu.mt/2022/11/02/mcast-ict-students-selected-to-compete-in-an-international-robotics-competition/" 
+              class="btn">2022 - Geneva</a>
+        </div>
 
-        <section id="curriculum" class="section">
-            <h2>Curriculum & Lesson Plans</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Sample Course: [Course Title]</h3>
-                    <p>A complete curriculum design showcasing backward design principles, aligned assessments, and scaffolded learning activities.</p>
-                    <div class="tags">
-                        <span class="tag">12 weeks</span>
-                        <span class="tag">College level</span>
-                        <span class="tag">Hybrid format</span>
-                    </div>
-                    <a href="curriculum/sample-course.pdf" class="btn">View Curriculum</a>
-                </div>
+        <div class="card">
+          <h3>Lesson Plan Series</h3>
+          <p>Detailed lesson plans demonstrating various instructional strategies, formative assessments, and differentiation techniques.</p>
+          <div class="tags">
+            <span class="tag">5 lessons</span>
+            <span class="tag">Active learning</span>
+            <span class="tag">UDL compliant</span>
+          </div>
+          <a href="/curriculum/lesson-plans.pdf" class="btn">View Lessons</a>
+        </div>
 
-                <div class="card">
-                    <h3>Lesson Plan Series</h3>
-                    <p>Detailed lesson plans demonstrating various instructional strategies, formative assessments, and differentiation techniques.</p>
-                    <div class="tags">
-                        <span class="tag">5 lessons</span>
-                        <span class="tag">Active learning</span>
-                        <span class="tag">UDL compliant</span>
-                    </div>
-                    <a href="curriculum/lesson-plans.pdf" class="btn">View Lessons</a>
-                </div>
+        <div class="card">
+          <h3>Assessment Design Portfolio</h3>
+          <p>Examples of authentic assessments, rubrics, and formative evaluation strategies aligned with learning objectives.</p>
+          <div class="tags">
+            <span class="tag">Rubrics</span>
+            <span class="tag">Projects</span>
+            <span class="tag">Quizzes</span>
+          </div>
+          <a href="/curriculum/assessments.pdf" class="btn">View Assessments</a>
+        </div>
+      </div>
+    </section>
 
-                <div class="card">
-                    <h3>Assessment Design Portfolio</h3>
-                    <p>Examples of authentic assessments, rubrics, and formative evaluation strategies aligned with learning objectives.</p>
-                    <div class="tags">
-                        <span class="tag">Rubrics</span>
-                        <span class="tag">Projects</span>
-                        <span class="tag">Quizzes</span>
-                    </div>
-                    <a href="curriculum/assessments.pdf" class="btn">View Assessments</a>
-                </div>
-            </div>
-        </section>
+    <!-- Interactive Section -->
+    <section id="interactive" class="section">
+      <h2>Interactive Learning Modules</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>H5P Interactive Video</h3>
+          <p>An interactive video lesson with embedded questions, knowledge checks, and branching scenarios.</p>
+          <div class="tags">
+            <span class="tag">H5P</span>
+            <span class="tag">Video-based</span>
+          </div>
+          <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Launch Module</a>
+        </div>
 
-        <section id="interactive" class="section">
-            <h2>Interactive Learning Modules</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>H5P Interactive Video</h3>
-                    <p>An interactive video lesson with embedded questions, knowledge checks, and branching scenarios.</p>
-                    <div class="tags">
-                        <span class="tag">H5P</span>
-                        <span class="tag">Video-based</span>
-                    </div>
-                    <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Launch Module</a>
-                </div>
+        <div class="card">
+          <h3>Drag & Drop Activity</h3>
+          <p>An engaging H5P drag-and-drop activity for concept categorization and application practice.</p>
+          <div class="tags">
+            <span class="tag">H5P</span>
+            <span class="tag">Interactive</span>
+          </div>
+          <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Try Activity</a>
+        </div>
 
-                <div class="card">
-                    <h3>Drag & Drop Activity</h3>
-                    <p>An engaging H5P drag-and-drop activity for concept categorization and application practice.</p>
-                    <div class="tags">
-                        <span class="tag">H5P</span>
-                        <span class="tag">Interactive</span>
-                    </div>
-                    <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Try Activity</a>
-                </div>
+        <div class="card">
+          <h3>Custom Quiz Application</h3>
+          <p>A JavaScript-based quiz demonstrating technical skills and understanding of learner feedback.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Custom built</span>
+          </div>
+          <a href="/interactive/quiz.html" class="btn btn-secondary">Take Quiz</a>
+        </div>
+      </div>
+  
+    </section>
 
-                <div class="card">
-                    <h3>Custom Quiz Application</h3>
-                    <p>A JavaScript-based quiz demonstrating technical skills and understanding of learner feedback.</p>
-                    <div class="tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Custom built</span>
-                    </div>
-                    <a href="interactive/quiz.html" class="btn btn-secondary">Take Quiz</a>
-                </div>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Get In Touch</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+        I'm actively seeking Education Engineer and Curriculum Manager positions. Let's discuss how 
+        my experience can contribute to your team.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="mailto:luc.micallef@gmail.com" class="btn">Email Me</a>
+        <a href="https://www.linkedin.com/in/lucienne-micallef/" class="btn">LinkedIn</a>
+        <a href="https://github.com/luciennemic" class="btn">GitHub</a>
+      </div>
+    </section>
 
-            <div class="interactive-demo">
-                <h3>Sample Interactive Demo: Quick Knowledge Check</h3>
-                <p style="margin-bottom: 1rem;">Try this simple interactive quiz I built with JavaScript:</p>
-                <div id="quiz-container">
-                    <div id="question-container">
-                        <p id="question" style="font-weight: bold; margin-bottom: 1rem;"></p>
-                        <div id="options" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
-                    </div>
-                    <div id="result" style="margin-top: 1rem; padding: 1rem; border-radius: 5px; display: none;"></div>
-                    <button id="next-btn" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; display: none;">Next Question</button>
-                </div>
-            </div>
-        </section>
+  </div>
 
-        <section id="contact" class="section">
-            <h2>Get In Touch</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-                I'm actively seeking Education Engineer and Curriculum Manager positions. Let's discuss how 
-                my experience can contribute to your team.
-            </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="mailto:luc.micallef@gmail.com" class="btn">Email Me</a>
-                <a href="https://www.linkedin.com/in/lucienne-micallef/" class="btn">LinkedIn</a>
-                <a href="https://github.com/luciennemic" class="btn">GitHub</a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 - Lucienne Micallef. Built with GitHub Pages.</p>
-    </footer>
+  <!-- Footer include -->
+  <div data-include="partials/footer.html"></div>
 
 </body>
 </html>
-
