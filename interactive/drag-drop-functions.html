@@ -22,14 +22,15 @@
       <h2>Activity: Match Functions</h2>
 
       <div class="drag-container">
-        <div class="draggable-item" draggable="true" id="func1">def greet(name): print("Hello, " + name)</div>
-        <div class="draggable-item" draggable="true" id="func2">def add(a, b): return a + b</div>
-        <div class="draggable-item" draggable="true" id="func3">def multiply(x, y): return x * y</div>
-
+        <div class="draggable-item" id="func1" draggable="true">def greet(name): print("Hello, " + name)</div>
+        <div class="draggable-item" id="func2" draggable="true">def add(a, b): return a + b</div>
+        <div class="draggable-item" id="func3" draggable="true">def multiply(x, y): return x * y</div>
+      
         <div class="drop-zone" data-accept="func1">Outputs a greeting message with the given name.</div>
         <div class="drop-zone" data-accept="func2">Returns the sum of two numbers.</div>
         <div class="drop-zone" data-accept="func3">Returns the product of two numbers.</div>
       </div>
+
 
       <div class="success-message" id="successMessage">🎉 All matches are correct!</div>
     </section>
