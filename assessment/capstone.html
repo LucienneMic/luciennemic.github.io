@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone Project Assessment - Lucienne Micallef</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- jsPDF UMD -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="../js/script.js"></script>
 </head>
 <body>
     <!-- Header Include -->
@@ -14,21 +14,16 @@
 
     <div class="hero">
         <h2>Capstone Project Assessment</h2>
-        <p>Evaluate your understanding and practical skills from the Python course.</p>
+        <p>Complete your project and generate a PDF of your submission.</p>
     </div>
 
     <div class="container">
         <section class="section">
             <h2>Project Instructions</h2>
             <p>
-                Complete the following Capstone Project based on everything you've learned from the course. 
-                Submit your solutions, and download the completed assessment as a PDF.
+                Complete this Capstone Project using the skills learned in the Python course. 
+                Provide your project title, problem description, key code snippets, expected outcomes, and reflections.
             </p>
-            <ul>
-                <li>Follow the requirements for code functionality.</li>
-                <li>Include comments and explanations for your solutions.</li>
-                <li>Ensure your project runs without errors.</li>
-            </ul>
         </section>
 
         <section class="section">
@@ -67,9 +62,18 @@
     <div data-include="../partials/footer.html"></div>
 
     <script>
-        // PDF generation
+        // Load header and footer
+        document.querySelectorAll('div[data-include]').forEach(div => {
+            const file = div.getAttribute('data-include');
+            fetch(file)
+                .then(res => res.text())
+                .then(html => div.innerHTML = html)
+                .catch(err => console.log(err));
+        });
+
+        // PDF generation using jsPDF
         document.getElementById('generatePdf').addEventListener('click', () => {
-            const { jsPDF } = window.jspdf;
+            const { jsPDF } = window.jspdf; // Correct access for UMD
             const pdf = new jsPDF();
             let y = 10;
 
@@ -80,22 +84,21 @@
                     pdf.text(`${el.previousElementSibling.textContent}:`, 10, y);
                     y += 6;
                     pdf.setFontSize(10);
-                    pdf.text(el.value || "-", 10, y);
-                    y += 15;
+
+                    const lines = pdf.splitTextToSize(el.value || "-", 180);
+                    pdf.text(lines, 10, y);
+                    y += lines.length * 6 + 6;
+
+                    // Add page if overflow
+                    if (y > 270) {
+                        pdf.addPage();
+                        y = 10;
+                    }
                 }
             });
 
             pdf.save('Capstone_Project_Assessment.pdf');
         });
-
-        // Load header and footer
-        fetch('../partials/header.html')
-          .then(res => res.text())
-          .then(html => document.querySelector('div[data-include="../partials/header.html"]').innerHTML = html);
-
-        fetch('../partials/footer.html')
-          .then(res => res.text())
-          .then(html => document.querySelector('div[data-include="../partials/footer.html"]').innerHTML = html);
     </script>
 </body>
 </html>
