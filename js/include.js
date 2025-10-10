@@ -1,19 +1,28 @@
-async function includeHTML() {
-  const elements = document.querySelectorAll('[data-include]');
-  for (const el of elements) {
+// include.js
+async function loadIncludes() {
+  const includeElements = document.querySelectorAll('[data-include]');
+
+  const fetches = Array.from(includeElements).map(async (el) => {
     const file = el.getAttribute('data-include');
     try {
       const response = await fetch(file);
-      if (response.ok) {
-        el.innerHTML = await response.text();
-      } else {
-        el.innerHTML = "Error loading " + file;
-      }
-    } catch {
-      el.innerHTML = "Error loading " + file;
+      if (!response.ok) throw new Error(`Could not fetch ${file}`);
+      const content = await response.text();
+      el.innerHTML = content;
+    } catch (err) {
+      console.error(err);
+      el.innerHTML = `<p style="color:red;">Failed to load ${file}</p>`;
     }
+  });
+
+  // Wait for all includes to finish
+  await Promise.all(fetches);
+
+  // Now that header/footer are loaded, initialize the site
+  if (typeof initSite === 'function') {
+    initSite();
   }
 }
 
-includeHTML();
-
+// Run on page load
+document.addEventListener('DOMContentLoaded', loadIncludes);
