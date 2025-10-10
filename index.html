@@ -231,6 +231,28 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
+            
+            .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(180deg, #007bff, #0056d2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+          }
+          .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+          }
+          .download-btn:focus {
+            outline: 3px solid rgba(0,123,255,0.4);
+            outline-offset: 3px;
+          }
         }
     </style>
 </head>
@@ -298,7 +320,15 @@
                     </p>
                 </div>
             </div>
-            
+            <a class="download-btn" 
+               href="assets/resume.pdf" 
+               download="Micallef_Lucienne_Resume.pdf" 
+               aria-label="Download resume as PDF">
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="vertical-align:middle; margin-right:8px;">
+                <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h6V9h3.67L12 2z"/>
+              </svg>
+              Download Resume
+            </a>
         </section>
 
         <section id="curriculum" class="section">
