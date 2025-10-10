@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 14 Capstone Project Assessment</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Week 14: Capstone Project Assessment</h1>
+    <form id="capstoneForm">
+      
+      <section>
+        <h2>Project Planning</h2>
+        <label>Problem Statement:</label>
+        <textarea name="problem" required></textarea>
+
+        <label>Proposed Solution:</label>
+        <textarea name="solution" required></textarea>
+
+        <label>Required Features:</label>
+        <textarea name="features" required></textarea>
+      </section>
+
+      <section>
+        <h2>Development & Implementation</h2>
+        <label>Key Functions & Modules Used:</label>
+        <textarea name="functions" required></textarea>
+
+        <label>Challenges Faced:</label>
+        <textarea name="challenges" required></textarea>
+      </section>
+
+      <section>
+        <h2>Documentation & Presentation</h2>
+        <label>README Overview:</label>
+        <textarea name="readme" required></textarea>
+
+        <label>Future Improvements:</label>
+        <textarea name="improvements" required></textarea>
+      </section>
+
+      <button type="button" id="generatePdf">Download PDF</button>
+    </form>
+  </div>
+
+  <script src="script/capstone.js"></script>
+</body>
+</html>
