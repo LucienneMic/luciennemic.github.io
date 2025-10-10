@@ -7,11 +7,12 @@ document.getElementById('generatePdf').addEventListener('click', () => {
   pdf.text("Week 14: Capstone Project Assessment", 105, y, { align: "center" });
   y += 10;
 
-  // Pre-fill Learning Outcomes
+  const form = document.getElementById('capstoneForm');
+
+  // Learning Outcomes
   pdf.setFontSize(12);
   pdf.setFont("Arial", "bold");
-  pdf.text("Learning Outcomes:", 10, y);
-  y += 6;
+  pdf.text("Learning Outcomes:", 10, y); y += 6;
   pdf.setFont("Arial", "normal");
   const outcomes = [
     "1. Design a functional Python program addressing a real-world problem.",
@@ -23,28 +24,24 @@ document.getElementById('generatePdf').addEventListener('click', () => {
   outcomes.forEach(line => { pdf.text(line, 10, y); y += 6; });
   y += 4;
 
-  // Pre-fill Assessment Rubric
+  // Self-assessment rubric
   pdf.setFont("Arial", "bold");
-  pdf.text("Assessment Rubric:", 10, y);
-  y += 6;
+  pdf.text("Self-Assessment Rubric:", 10, y); y += 6;
   pdf.setFont("Arial", "normal");
-  const rubric = [
-    "Functionality: Program runs without errors; meets all requirements.",
-    "Code Quality: Clean, organized, well-commented code.",
-    "Creativity: Original approach; adds unique features.",
-    "Documentation: Comprehensive README; clear instructions.",
-    "Presentation: Clear and confident; answers questions well."
-  ];
-  rubric.forEach(line => { pdf.text(line, 10, y); y += 6; });
+  const rubricFields = ["func","codeQuality","creativity","documentation","presentation"];
+  const rubricLabels = ["Functionality","Code Quality","Creativity","Documentation","Presentation"];
+  rubricFields.forEach((field, i) => {
+    const value = form[field].options[form[field].selectedIndex].text;
+    pdf.text(`${rubricLabels[i]}: ${value}`, 10, y);
+    y += 6;
+  });
   y += 4;
 
-  // Include student input
-  const form = document.getElementById('capstoneForm');
+  // Student input
   Array.from(form.elements).forEach(el => {
     if (el.tagName === 'TEXTAREA') {
       pdf.setFont("Arial", "bold");
-      pdf.text(`${el.previousElementSibling.textContent}`, 10, y);
-      y += 6;
+      pdf.text(`${el.previousElementSibling.textContent}`, 10, y); y += 6;
       pdf.setFont("Arial", "normal");
       const lines = pdf.splitTextToSize(el.value, 180);
       pdf.text(lines, 10, y);
