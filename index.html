@@ -1,1 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Education Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #e8f0fe;
+            color: #1967d2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-sidebar {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .about-sidebar h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about-sidebar ul {
+            list-style: none;
+        }
+
+        .about-sidebar li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skill {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .interactive-demo {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Your Name</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#interactive">Interactive</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h2>Education Engineer & Curriculum Designer</h2>
+        <p>12+ years of college teaching experience | Creating engaging, effective learning experiences</p>
+    </div>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-sidebar">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li><strong>Experience:</strong> 12 years</li>
+                        <li><strong>Level:</strong> College/Higher Ed</li>
+                        <li><strong>Location:</strong> Marina, CA</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Core Skills</h3>
+                    <div class="skills">
+                        <span class="skill">Curriculum Design</span>
+                        <span class="skill">Learning Analytics</span>
+                        <span class="skill">LMS Management</span>
+                        <span class="skill">Assessment Design</span>
+                        <span class="skill">Instructional Technology</span>
+                        <span class="skill">Universal Design</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                        I'm an experienced educator transitioning into Education Engineering and Curriculum Management roles. 
+                        With 12 years of college teaching, I've developed a deep understanding of how students learn and 
+                        what makes curriculum effective.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        My approach combines pedagogical best practices with modern educational technology. I believe in 
+                        backward design, measurable learning outcomes, and creating inclusive learning experiences that 
+                        work for diverse learners.
+                    </p>
+                    <p>
+                        I'm passionate about scaling quality education through well-designed curriculum, leveraging 
+                        technology to enhance learning, and using data to continuously improve student outcomes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="section">
+            <h2>Curriculum & Lesson Plans</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Sample Course: [Course Title]</h3>
+                    <p>A complete curriculum design showcasing backward design principles, aligned assessments, and scaffolded learning activities.</p>
+                    <div class="tags">
+                        <span class="tag">12 weeks</span>
+                        <span class="tag">College level</span>
+                        <span class="tag">Hybrid format</span>
+                    </div>
+                    <a href="curriculum/sample-course.pdf" class="btn">View Curriculum</a>
+                </div>
+
+                <div class="card">
+                    <h3>Lesson Plan Series</h3>
+                    <p>Detailed lesson plans demonstrating various instructional strategies, formative assessments, and differentiation techniques.</p>
+                    <div class="tags">
+                        <span class="tag">5 lessons</span>
+                        <span class="tag">Active learning</span>
+                        <span class="tag">UDL compliant</span>
+                    </div>
+                    <a href="curriculum/lesson-plans.pdf" class="btn">View Lessons</a>
+                </div>
+
+                <div class="card">
+                    <h3>Assessment Design Portfolio</h3>
+                    <p>Examples of authentic assessments, rubrics, and formative evaluation strategies aligned with learning objectives.</p>
+                    <div class="tags">
+                        <span class="tag">Rubrics</span>
+                        <span class="tag">Projects</span>
+                        <span class="tag">Quizzes</span>
+                    </div>
+                    <a href="curriculum/assessments.pdf" class="btn">View Assessments</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive" class="section">
+            <h2>Interactive Learning Modules</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>H5P Interactive Video</h3>
+                    <p>An interactive video lesson with embedded questions, knowledge checks, and branching scenarios.</p>
+                    <div class="tags">
+                        <span class="tag">H5P</span>
+                        <span class="tag">Video-based</span>
+                    </div>
+                    <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Launch Module</a>
+                </div>
+
+                <div class="card">
+                    <h3>Drag & Drop Activity</h3>
+                    <p>An engaging H5P drag-and-drop activity for concept categorization and application practice.</p>
+                    <div class="tags">
+                        <span class="tag">H5P</span>
+                        <span class="tag">Interactive</span>
+                    </div>
+                    <a href="https://h5p.org/node/YOUR_ID" class="btn btn-secondary">Try Activity</a>
+                </div>
+
+                <div class="card">
+                    <h3>Custom Quiz Application</h3>
+                    <p>A JavaScript-based quiz demonstrating technical skills and understanding of learner feedback.</p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Custom built</span>
+                    </div>
+                    <a href="interactive/quiz.html" class="btn btn-secondary">Take Quiz</a>
+                </div>
+            </div>
+
+            <div class="interactive-demo">
+                <h3>Sample Interactive Demo: Quick Knowledge Check</h3>
+                <p style="margin-bottom: 1rem;">Try this simple interactive quiz I built with JavaScript:</p>
+                <div id="quiz-container">
+                    <div id="question-container">
+                        <p id="question" style="font-weight: bold; margin-bottom: 1rem;"></p>
+                        <div id="options" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+                    </div>
+                    <div id="result" style="margin-top: 1rem; padding: 1rem; border-radius: 5px; display: none;"></div>
+                    <button id="next-btn" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; display: none;">Next Question</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                I'm actively seeking Education Engineer and Curriculum Manager positions. Let's discuss how 
+                my experience can contribute to your team.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                <a href="https://linkedin.com/in/yourprofile" class="btn">LinkedIn</a>
+                <a href="https://github.com/yourusername" class="btn">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Name. Built with GitHub Pages.</p>
+    </footer>
+
+    <script>
+        // Sample interactive quiz
+        const quizData = [
+            {
+                question: "What is the first step in backward design?",
+                options: ["Create activities", "Identify desired results", "Plan assessments", "Choose textbook"],
+                correct: 1
+            },
+            {
+                question: "Which approach best supports diverse learners?",
+                options: ["One-size-fits-all content", "Universal Design for Learning", "Text-only materials", "Lecture-only format"],
+                correct: 1
+            },
+            {
+                question: "What makes an assessment 'authentic'?",
+                options: ["Multiple choice only", "Real-world application", "Timed format", "Memorization-based"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('question').textContent = q.question;
+            
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.textContent = option;
+                btn.style.cssText = 'padding: 0.75rem; background: white; border: 2px solid #e2e8f0; border-radius: 5px; cursor: pointer; text-align: left; transition: all 0.3s;';
+                btn.onmouseover = () => btn.style.background = '#f7fafc';
+                btn.onmouseout = () => btn.style.background = 'white';
+                btn.onclick = () => checkAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+        }
+
+        function checkAnswer(selected) {
+            const q = quizData[currentQuestion];
+            const resultDiv = document.getElementById('result');
+            const buttons = document.getElementById('options').getElementsByTagName('button');
+            
+            Array.from(buttons).forEach(btn => btn.disabled = true);
+            
+            if (selected === q.correct) {
+                score++;
+                resultDiv.textContent = '✓ Correct! Great job.';
+                resultDiv.style.background = '#c6f6d5';
+                resultDiv.style.color = '#22543d';
+                buttons[selected].style.background = '#c6f6d5';
+                buttons[selected].style.borderColor = '#48bb78';
+            } else {
+                resultDiv.textContent = '✗ Not quite. The correct answer is: ' + q.options[q.correct];
+                resultDiv.style.background = '#fed7d7';
+                resultDiv.style.color = '#742a2a';
+                buttons[selected].style.background = '#fed7d7';
+                buttons[selected].style.borderColor = '#f56565';
+                buttons[q.correct].style.background = '#c6f6d5';
+                buttons[q.correct].style.borderColor = '#48bb78';
+            }
+            
+            resultDiv.style.display = 'block';
+            
+            if (currentQuestion < quizData.length - 1) {
+                document.getElementById('next-btn').style.display = 'block';
+            } else {
+                resultDiv.textContent += `\n\nQuiz complete! Your score: ${score}/${quizData.length}`;
+            }
+        }
+
+        document.getElementById('next-btn').onclick = () => {
+            currentQuestion++;
+            loadQuestion();
+        };
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
