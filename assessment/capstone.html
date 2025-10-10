@@ -1,94 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 14 Capstone Project Assessment</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project Assessment - Lucienne Micallef</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../script/script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Week 14: Capstone Project Assessment</h1>
-    <form id="capstoneForm">
-      
-      <section>
-        <h2>Project Planning</h2>
-        <label>Problem Statement:</label>
-        <textarea name="problem" required></textarea>
+    <!-- Header Include -->
+    <div data-include="../partials/header.html"></div>
 
-        <label>Proposed Solution:</label>
-        <textarea name="solution" required></textarea>
+    <div class="hero">
+        <h2>Capstone Project Assessment</h2>
+        <p>Evaluate your understanding and practical skills from the Python course.</p>
+    </div>
 
-        <label>Required Features:</label>
-        <textarea name="features" required></textarea>
-      </section>
+    <div class="container">
+        <section class="section">
+            <h2>Project Instructions</h2>
+            <p>
+                Complete the following Capstone Project based on everything you've learned from the course. 
+                Submit your solutions, and download the completed assessment as a PDF.
+            </p>
+            <ul>
+                <li>Follow the requirements for code functionality.</li>
+                <li>Include comments and explanations for your solutions.</li>
+                <li>Ensure your project runs without errors.</li>
+            </ul>
+        </section>
 
-      <section>
-        <h2>Development & Implementation</h2>
-        <label>Key Functions & Modules Used:</label>
-        <textarea name="functions" required></textarea>
+        <section class="section">
+            <h2>Assessment Form</h2>
+            <form id="capstoneForm">
+                <label for="projectTitle">Project Title</label>
+                <input type="text" id="projectTitle" name="projectTitle" placeholder="Enter your project title" required>
 
-        <label>Challenges Faced:</label>
-        <textarea name="challenges" required></textarea>
-      </section>
+                <label for="problemStatement">Problem Statement / Description</label>
+                <textarea id="problemStatement" name="problemStatement" placeholder="Describe your problem and approach" required></textarea>
 
-      <section>
-        <h2>Documentation & Presentation</h2>
-        <label>README Overview:</label>
-        <textarea name="readme" required></textarea>
+                <label for="keyFunctions">Key Functions / Code Snippets</label>
+                <textarea id="keyFunctions" name="keyFunctions" placeholder="Paste or write key functions here" required></textarea>
 
-        <label>Future Improvements:</label>
-        <textarea name="improvements" required></textarea>
-      </section>
+                <label for="expectedOutcome">Expected Outcome / Results</label>
+                <textarea id="expectedOutcome" name="expectedOutcome" placeholder="Describe expected outputs and results" required></textarea>
 
-      <section>
-        <h2>Self-Assessment Rubric</h2>
-        <label>Functionality:</label>
-        <select name="func">
-          <option value="4">Excellent</option>
-          <option value="3">Good</option>
-          <option value="2">Satisfactory</option>
-          <option value="1">Needs Improvement</option>
-        </select>
+                <label for="challenges">Challenges & Lessons Learned</label>
+                <textarea id="challenges" name="challenges" placeholder="Describe challenges and how you solved them" required></textarea>
 
-        <label>Code Quality:</label>
-        <select name="codeQuality">
-          <option value="4">Excellent</option>
-          <option value="3">Good</option>
-          <option value="2">Satisfactory</option>
-          <option value="1">Needs Improvement</option>
-        </select>
+                <label for="selfEvaluation">Self-Evaluation</label>
+                <select id="selfEvaluation" name="selfEvaluation" required>
+                    <option value="">Select your evaluation</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="needsImprovement">Needs Improvement</option>
+                </select>
 
-        <label>Creativity:</label>
-        <select name="creativity">
-          <option value="4">Excellent</option>
-          <option value="3">Good</option>
-          <option value="2">Satisfactory</option>
-          <option value="1">Needs Improvement</option>
-        </select>
+                <button type="button" id="generatePdf" class="btn">Download PDF</button>
+            </form>
+        </section>
+    </div>
 
-        <label>Documentation:</label>
-        <select name="documentation">
-          <option value="4">Excellent</option>
-          <option value="3">Good</option>
-          <option value="2">Satisfactory</option>
-          <option value="1">Needs Improvement</option>
-        </select>
+    <!-- Footer Include -->
+    <div data-include="../partials/footer.html"></div>
 
-        <label>Presentation:</label>
-        <select name="presentation">
-          <option value="4">Excellent</option>
-          <option value="3">Good</option>
-          <option value="2">Satisfactory</option>
-          <option value="1">Needs Improvement</option>
-        </select>
-      </section>
+    <script>
+        // PDF generation
+        document.getElementById('generatePdf').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+            let y = 10;
 
-      <button type="button" id="generatePdf">Download PDF</button>
-    </form>
-  </div>
+            const form = document.getElementById('capstoneForm');
+            Array.from(form.elements).forEach(el => {
+                if (el.tagName === 'TEXTAREA' || el.tagName === 'INPUT' || el.tagName === 'SELECT') {
+                    pdf.setFontSize(12);
+                    pdf.text(`${el.previousElementSibling.textContent}:`, 10, y);
+                    y += 6;
+                    pdf.setFontSize(10);
+                    pdf.text(el.value || "-", 10, y);
+                    y += 15;
+                }
+            });
 
-  <script src="js/capstone.js"></script>
+            pdf.save('Capstone_Project_Assessment.pdf');
+        });
+
+        // Load header and footer
+        fetch('../partials/header.html')
+          .then(res => res.text())
+          .then(html => document.querySelector('div[data-include="../partials/header.html"]').innerHTML = html);
+
+        fetch('../partials/footer.html')
+          .then(res => res.text())
+          .then(html => document.querySelector('div[data-include="../partials/footer.html"]').innerHTML = html);
+    </script>
 </body>
 </html>
