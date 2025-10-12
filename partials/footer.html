@@ -1,4 +1,8 @@
 <footer>
-  <p>© {current-year} Lucienne Micallef — Built using GitHub Pages</p>
+ <p>© <span id="year"></span> Lucienne Micallef — Built using GitHub Pages</p>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </footer>
 
